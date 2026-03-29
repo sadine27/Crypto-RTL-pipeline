@@ -2,7 +2,7 @@ name: Crypto ETL Pipeline
 
 on:
   schedule:
-    - cron: '30 3 * * *'   # 9 AM IST daily
+    - cron: '15 13 * * *'   # 9 AM IST daily
   workflow_dispatch:       # allows manual run button
 
 jobs:
