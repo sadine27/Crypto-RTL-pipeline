@@ -52,9 +52,10 @@ def make_csv(master_data):
 excel_file_path = make_csv(master_data)
 
 def web_hook(excel_file_path):
-    with open(excel_file_path,"rb") as f:
+    with open(excel_file_path,"rb") as f, open("Crypto_Data.csv","rb") as g:
         payload_file = {
-            "files" : (str(excel_file_path),f,"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+            "data_for_ai" : ("Crypto_Data.csv",g , "text/csv"),
+            "excel_file" : (str(excel_file_path),f,"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
         }
         respond = requests.post(os.environ.get("N8N_link"),files=payload_file)
     
