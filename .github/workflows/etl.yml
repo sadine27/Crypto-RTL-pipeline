@@ -22,7 +22,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests pandas python-dotenv
+        run: pip install requests pandas python-dotenv openpyxl xlsxwriter
 
       - name: Run ETL script
         run: python extraction.py
